@@ -1,0 +1,242 @@
+.profile-page {
+  width: 100%;
+  height: auto;
+  font-family: $p-font;
+  color: $grayscale1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background: url("../../assets/profile-page-ellipse.png") no-repeat left 50%;
+  @include fluid-size("background-position-y", 375px, 1600px, 0px, -150px);
+  background-size: contain;
+  padding-bottom: 75px;
+
+  @include md {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 200px;
+  }
+  @include sm {
+    padding-bottom: 270px;
+  }
+}
+
+.profile-page-sections {
+  background: #FFF;
+  box-shadow: 0px 4px 15px rgba(12, 22, 44, 0.1);
+  border-radius: 20px;
+  @include fluid-size("width", 1024px, 1600px, 260px, 320px);
+  @include fluid-size("padding", 1024px, 1600px, 20px, 40px);
+  margin-right: 40px;
+  @include md {
+    width: calc(100% - 40px);
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 18px;
+    line-height: 23px;
+    @include fluid-size("font-size", 375px, 1600px, 14px, 18px);
+    @include fluid-size("line-height", 375px, 1600px, 21px, 23px);
+
+    &__item {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      &.active {
+        color: $primary;
+        //& > .profile-icon {
+        //  @mixin element-color($color) {
+        //    background-image: url('data:image/svg+xml;utf8,<svg ...><path fill="#{$color}" ... /></path></svg>') no-repeat;
+        //    background-size: contain;
+        //  }
+        //
+        //  @include element-color($primary);
+        //}
+        &.profile-item {
+          &-progress {
+            & > .profile-icon {
+              background: url("../../assets/profile-progressBlue.svg") no-repeat;
+              background-size: contain;
+            }
+          }
+    
+          &-certificate {
+            & > .profile-icon {
+              background: url("../../assets/profile-certificateBlue.svg") no-repeat;
+              background-size: contain;
+            }
+          }
+    
+          &-info {
+            & > .profile-icon {
+              background: url("../../assets/profile-infoBlue.svg") no-repeat;
+              background-size: contain;
+    
+            }
+          }
+    
+          &-reset {
+            & > .profile-icon {
+              background: url("../../assets/profile-resetBlue.svg") no-repeat;
+              background-size: contain;
+            }
+          }
+        }
+        
+      }
+
+      & > .profile-icon {
+        width: 24px;
+        height: 24px;
+        margin-right: 16px;
+      }
+
+      & > .profile-text {
+
+      }
+    }
+
+    &__line {
+      width: 100%;
+      border-bottom: 1px solid #D4DBEA;
+      margin: 20px 0;
+    }
+
+    & > .profile-item {
+      
+      &-progress {
+        & > .profile-icon {
+          background: url("../../assets/profile-progress.svg") no-repeat;
+          background-size: contain;
+        }
+      }
+
+      &-certificate {
+        & > .profile-icon {
+          background: url("../../assets/profile-certificate.svg") no-repeat;
+          background-size: contain;
+        }
+      }
+
+      &-info {
+        & > .profile-icon {
+          background: url("../../assets/profile-info.svg") no-repeat;
+          background-size: contain;
+
+        }
+      }
+
+      &-reset {
+        & > .profile-icon {
+          background: url("../../assets/profile-reset.svg") no-repeat;
+          background-size: contain;
+        }
+      }
+    }
+
+    .progress-courses {
+      &__wrapper {
+        margin-top: 10px;
+        margin-left: 40px;
+      }
+
+      &__item {
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+.profile-page-section {
+  display: none;
+  padding: 60px;
+  flex-direction: column;
+  align-items: flex-start;
+  background: #FFF;
+  box-shadow: 0px 4px 15px rgba(12, 22, 44, 0.1);
+  border-radius: 20px;
+  position: relative;
+  @include fluid-size("width", 1024px, 1600px, 640px, 840px);
+  
+  @include md {
+    padding: 40px 30px;
+  }
+  @include sm {
+    padding: 30px 10px;
+  }
+  @include lg {
+    padding: 40px 30px;
+  }
+  @include xl {
+    padding: 60px 60px; 
+  }
+
+  @include md {
+    width: calc(100% - 40px);
+  }
+  &.profile-page-visible {
+    display: flex;
+  }
+
+  &__course {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    position: relative;
+  }
+
+  &__course + &__course {
+    position: relative;
+    margin-top: 50px;
+  }
+
+  &__header {
+    font-weight: 900;
+    @include fluid-size("font-size", 375px, 1600px, 20px, 32px);
+    @include fluid-size("line-height", 375px, 1600px, 24px, 38px);
+  }
+}
+
+.profile-page-progress {
+  margin-bottom: 100px;
+  @include sm {
+    margin-bottom: 60px;
+  }
+}
+
+.profile-page-reset-password {
+  &-wrapper {
+    width: 400px;
+  }
+
+  margin-bottom: 214px;
+  @include md {
+    margin-bottom: 60px;
+  }
+}
+
+.profile-page-delete-acc, .profile-page-confirm-pass {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 50;
+}
+
+.profile-nft-certificate {
+  padding-top: 25px;
+  .button {
+    background-color: black;
+  }
+}
+
+.invisible {
+  display: none;
+}
